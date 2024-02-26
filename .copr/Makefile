@@ -1,4 +1,5 @@
 rpmbuild_src = $(shell rpmbuild --eval '%{_sourcedir}')
+spec = zig.spec
 .PHONY: prepare srpm rpm
 
 prepare:

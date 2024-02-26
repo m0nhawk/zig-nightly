@@ -7,7 +7,8 @@ on:
     - cron:  '0 23 * * *'
 
 jobs:
-  clojure:
+  scheduled:
+    runs-on: ubuntu-latest
     steps:
       - name: Checkout
         uses: actions/checkout@v4

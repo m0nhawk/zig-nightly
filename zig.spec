@@ -141,6 +141,9 @@ help2man --no-discard-stderr --no-info "%{__cmake_builddir}/stage3/bin/zig" --ve
 %endif
 
 %install
+# Ignore standard RPATH for now
+export QA_RPATHS=$(( 0x0001 ))
+
 %cmake_install
 
 install -D -pv -m 0644 -t %{buildroot}%{_mandir}/man1/ %{name}.1

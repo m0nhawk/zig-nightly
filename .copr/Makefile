@@ -2,10 +2,10 @@ rpmbuild_src = $(shell rpmbuild --eval '%{_sourcedir}')
 .PHONY: prepare srpm rpm
 
 prepare:
-	dnf -y install rpmdevtools rpm-build || true
+	# dnf -y install rpmdevtools rpm-build || true
 	rpmdev-setuptree
-	[ -f *.patch ] && cp *.patch $(rpmbuild_src) || true
-	[ -f macros.zig ] && cp macros.zig $(rpmbuild_src) || true
+	cp *.patch $(rpmbuild_src)
+	cp macros.zig $(rpmbuild_src)
 	spectool -g -R $(spec)
 
 srpm: prepare

@@ -1,11 +1,11 @@
 rpmbuild_src = $(shell rpmbuild --eval '%{_sourcedir}')
-spec = zig.spec
 .PHONY: prepare srpm rpm
 
 prepare:
 	dnf -y install rpmdevtools rpm-build || true
 	rpmdev-setuptree
 	[ -f *.patch ] && cp *.patch $(rpmbuild_src) || true
+	[ -f macros.zig ] && cp macros.zig $(rpmbuild_src) || true
 	spectool -g -R $(spec)
 
 srpm: prepare

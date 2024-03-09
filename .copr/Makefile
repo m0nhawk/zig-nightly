@@ -2,7 +2,8 @@ rpmbuild_src = $(shell rpmbuild --eval '%{_sourcedir}')
 .PHONY: prepare srpm rpm
 
 prepare:
-	dnf -y install rpmdevtools rpm-build || true
+	dnf copr enable andrewpro/zig-nightly || true
+	dnf -y install rpmdevtools rpm-build zig || true
 	rpmdev-setuptree
 	cp *.patch $(rpmbuild_src)
 	cp macros.zig $(rpmbuild_src)

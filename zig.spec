@@ -15,7 +15,7 @@
 %define prerelease dev.4+c7ffdbcd4
 
 Name:           zig
-Version:        0.12.0
+Version:        0.13.0
 Release:        0.%{prerelease}%{?dist}
 Summary:        Programming language for maintaining robust, optimal, and reusable software
 

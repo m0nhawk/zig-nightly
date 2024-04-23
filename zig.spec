@@ -33,8 +33,8 @@ Patch:          0002-Enable-build-id-by-default.patch
 BuildRequires:  gcc
 BuildRequires:  gcc-c++
 BuildRequires:  cmake
-BuildRequires:  llvm-devel
-BuildRequires:  clang-devel
+BuildRequires:  llvm17-devel
+BuildRequires:  clang17-devel
 BuildRequires:  lld-devel
 BuildRequires:  zlib-devel
 # for man page generation

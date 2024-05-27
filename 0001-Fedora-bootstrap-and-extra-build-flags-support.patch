@@ -1,5 +1,5 @@
---- CMakeLists.txt	2024-05-27 00:27:15.852461990 -0500
-+++ CMakeLists.txt	2024-05-27 00:32:57.664201592 -0500
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
 @@ -922,6 +922,9 @@
      target_link_libraries(zig2 LINK_PUBLIC version)
  endif()

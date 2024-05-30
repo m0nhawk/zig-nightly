@@ -12,7 +12,7 @@
 %bcond macro    %{without bootstrap}
 %bcond test     1
 
-%define prerelease dev.343+2008d0f7c
+%define prerelease dev.345+103b885fc
 
 Name:           zig
 Version:        0.13.0

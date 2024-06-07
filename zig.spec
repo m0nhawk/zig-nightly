@@ -4,7 +4,7 @@
 # Signing key from https://ziglang.org/download/
 %global         public_key RWSGOq2NVecA2UPNdBUZykf1CCb147pkmdtYxgb3Ti+JO/wCYvhbAb/U
 
-%global         llvm_version 16.0.0
+%global         llvm_version 18.0.0
 
 
 %bcond bootstrap 1
@@ -123,7 +123,12 @@ This package contains common RPM macros for %{name}.
 %prep
 /usr/bin/minisign -V -m %{SOURCE0} -x %{SOURCE1} -P %{public_key}
 
+%if "%{prerelease}" == "1"
+%autosetup -p1 -n %{name}-%{version}
+%else
 %autosetup -p1 -n %{name}-%{version}-%{prerelease}
+%endif
+
 %if %{without bootstrap}
 # Ensure that the pre-build stage1 binary is not used
 rm -f stage1/zig1.wasm

@@ -1,15 +1,15 @@
 #!/usr/bin/env python3
 
-import requests
 import json
 import os
+import urllib.request
 
 def split_version(version):
     return version.split('-')
 
 def get_master_version(url):
-    response = requests.get(url)
-    data = response.json()
+    with urllib.request.urlopen(url) as response:
+        data = json.loads(response.read().decode())
     return data['master']['version']
 
 def read_prev_version():

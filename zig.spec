@@ -28,7 +28,7 @@ Summary:        Programming language for maintaining robust, optimal, and reusab
 License:        MIT and NCSA and LGPLv2+ and LGPLv2+ with exceptions and GPLv2+ and GPLv2+ with exceptions and BSD and Inner-Net and ISC and Public Domain and GFDL and ZPLv2.1
 URL:            https://ziglang.org
 
-%if "%{prerelease}" == 1
+%if "%{prerelease}" == "1"
 Source0:        %{url}/builds/%{name}-%{version}-%{prerelease}.tar.xz
 Source1:        %{url}/builds/%{name}-%{version}-%{prerelease}.tar.xz.minisig
 %else

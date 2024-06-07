@@ -29,11 +29,11 @@ License:        MIT and NCSA and LGPLv2+ and LGPLv2+ with exceptions and GPLv2+ 
 URL:            https://ziglang.org
 
 %if "%{prerelease}" == "1"
-Source0:        %{url}/builds/%{name}-%{version}-%{prerelease}.tar.xz
-Source1:        %{url}/builds/%{name}-%{version}-%{prerelease}.tar.xz.minisig
-%else
 Source0:        %{url}/builds/%{name}-%{version}.tar.xz
 Source1:        %{url}/builds/%{name}-%{version}.tar.xz.minisig
+%else
+Source0:        %{url}/builds/%{name}-%{version}-%{prerelease}.tar.xz
+Source1:        %{url}/builds/%{name}-%{version}-%{prerelease}.tar.xz.minisig
 %endif
 
 Source2:        macros.%{name}

@@ -17,7 +17,7 @@
 Name:           zig
 Version:        0.13.0
 
-%if "%{prerelease}" == 1
+%if "%{prerelease}" == "1"
 Release:        %{prerelease}.%{?dist}
 %else
 Release:        0.%{prerelease}%{?dist}

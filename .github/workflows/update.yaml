@@ -13,19 +13,11 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Prepare java
-        uses: actions/setup-java@v4
+      - uses: actions/setup-python@v5
         with:
-          distribution: 'zulu'
-          java-version: '21'
+          python-version: '3.12'
 
-      - name: Install clojure tools
-        uses: DeLaGuardo/setup-clojure@12.5
-        with:
-          bb: 'latest'
-
-      - name: Get babashka version
-        run: bb zig-updater.clj
+      - run: python zig-updater.py
 
       - name: Commit and push if it changed
         run: |-

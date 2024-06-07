@@ -16,13 +16,26 @@
 
 Name:           zig
 Version:        0.13.0
+
+%if "%{prerelease}" == 1
+Release:        %{prerelease}.%{?dist}
+%else
 Release:        0.%{prerelease}%{?dist}
+%endif
+
 Summary:        Programming language for maintaining robust, optimal, and reusable software
 
 License:        MIT and NCSA and LGPLv2+ and LGPLv2+ with exceptions and GPLv2+ and GPLv2+ with exceptions and BSD and Inner-Net and ISC and Public Domain and GFDL and ZPLv2.1
 URL:            https://ziglang.org
+
+%if "%{prerelease}" == 1
 Source0:        %{url}/builds/%{name}-%{version}-%{prerelease}.tar.xz
 Source1:        %{url}/builds/%{name}-%{version}-%{prerelease}.tar.xz.minisig
+%else
+Source0:        %{url}/builds/%{name}-%{version}.tar.xz
+Source1:        %{url}/builds/%{name}-%{version}.tar.xz.minisig
+%endif
+
 Source2:        macros.%{name}
 # Support clean build of stage3 with temporary bootstrapped package
 Patch:          0001-Fedora-bootstrap-and-extra-build-flags-support.patch

@@ -15,7 +15,7 @@
 %define prerelease dev.2+0884a4341
 
 Name:           zig
-Version:        0.13.0
+Version:        0.14.0
 
 %if "%{prerelease}" == "1"
 Release:        1%{?dist}

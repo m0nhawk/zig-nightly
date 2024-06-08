@@ -32,8 +32,9 @@ def update_zig_spec(new_version):
     if prev_first != new_first or prev_second != new_second:
         with open(spec_file_path, 'r') as file:
             content = file.read()
+        updated_content = content.replace(f"{prev_first}", f"{new_first}")
         if prev_second is not None and new_second is not None:
-            updated_content = content.replace(f"%define prerelease {prev_second}", f"%define prerelease {new_second}")
+            updated_content = updated_content.replace(f"%define prerelease {prev_second}", f"%define prerelease {new_second}")
             with open(spec_file_path, 'w') as file:
                 file.write(updated_content)
 

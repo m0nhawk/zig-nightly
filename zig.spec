@@ -18,9 +18,9 @@ Name:           zig
 Version:        0.13.0
 
 %if "%{prerelease}" == "1"
-Release:        1.release%{?dist}
+Release:        1%{?dist}
 %else
-Release:        0.%{prerelease}%{?dist}
+Release:        0%{prerelease}%{?dist}
 %endif
 
 Summary:        Programming language for maintaining robust, optimal, and reusable software

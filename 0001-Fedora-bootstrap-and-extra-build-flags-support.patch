@@ -8,8 +8,8 @@
 +set(ZIG_EXTRA_BUILD_ARGS "" CACHE STRING "Extra flags for stage3 build")
 +set(ZIG_EXECUTABLE "$<TARGET_FILE:zig2>" CACHE STRING "Compiler command to use for stage3 build")
  
-# "-Dno-langref" is hardcoded because stage2 builds lack the `@cImport`
-# feature, which some of the doctests rely on.
+ # "-Dno-langref" is hardcoded because stage2 builds lack the `@cImport`
+ # feature, which some of the doctests rely on.
 @@ -932,6 +935,8 @@
    "-Dtarget=${ZIG_TARGET_TRIPLE}"
    "-Dcpu=${ZIG_TARGET_MCPU}"

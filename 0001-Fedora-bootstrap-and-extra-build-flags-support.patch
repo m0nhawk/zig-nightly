@@ -19,7 +19,7 @@
    -Denable-llvm
    "-Dconfig_h=${ZIG_CONFIG_H_OUT}"
  
-@@ -976,8 +981,9 @@
+@@ -978,8 +983,9 @@
  
  add_custom_command(
    OUTPUT "${PROJECT_BINARY_DIR}/stage3/bin/zig"
